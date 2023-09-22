@@ -1,16 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "klub_sepakbola";  
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Periksa koneksi
-if ($conn->connect_error) {
-    die("Koneksi ke database gagal: " . $conn->connect_error);
-}
+require_once('koneksi.php');
 
 // data klasemen
 $query = "SELECT
@@ -29,7 +19,7 @@ FROM
 $query = "SELECT NamaKlub, Ma, Me, S, K, GM, GK, Point FROM Klub";
 // $query = "SELECT NamaKlub, Point FROM Klub";
 
-$result = $conn->query($query);
+$result = $koneksi->query($query);
 
 if ($result->num_rows > 0) {
 ?>
@@ -112,5 +102,5 @@ if ($result->num_rows > 0) {
 }
 
 
-$conn->close();
+$koneksi->close();
 ?>

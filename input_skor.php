@@ -1,11 +1,5 @@
 <?php
-// Sambungkan ke database 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "klub_sepakbola";
-
-$koneksi = new mysqli($servername, $username, $password, $dbname);
+require_once('koneksi.php');
 
 // Periksa koneksi
 if ($koneksi->connect_error) {
