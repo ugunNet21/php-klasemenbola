@@ -1,9 +1,9 @@
 <?php
-// Sambungkan ke database (gantilah dengan informasi koneksi yang sesuai)
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "klub_sepakbola";  // Nama database Anda
+$dbname = "klub_sepakbola";  
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Koneksi ke database gagal: " . $conn->connect_error);
 }
 
-// Query untuk mengambil data klasemen
+// data klasemen
 $query = "SELECT
     NamaKlub,
     Main AS Ma,         -- Jumlah pertandingan
@@ -25,7 +25,7 @@ $query = "SELECT
 FROM
     Klub";
 
-// Query untuk mengambil data klasemen
+//  klasemen
 $query = "SELECT NamaKlub, Ma, Me, S, K, GM, GK, Point FROM Klub";
 // $query = "SELECT NamaKlub, Point FROM Klub";
 
